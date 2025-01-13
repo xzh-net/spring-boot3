@@ -1,4 +1,4 @@
-package net.xzh.gradledemo;
+package net.xzh.gradle;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

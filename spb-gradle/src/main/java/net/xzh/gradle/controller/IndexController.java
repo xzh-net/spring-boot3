@@ -1,4 +1,4 @@
-package net.xzh.gradledemo.controller;
+package net.xzh.gradle.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
