@@ -14,7 +14,7 @@ public class IndexController {
 	@RequestMapping(value = "/index")
 	@ResponseBody
 	public String index() {
-		return "Hello，admin "+ System.currentTimeMillis();
+		return "这是一个gradle demo。"+ System.currentTimeMillis();
 	}
 
 }
