@@ -1,0 +1,11 @@
+server:
+  port: 8080
+milvus:
+  host: 172.17.17.160
+  port: 19530
+spring:
+  application:
+    name: spring-ai-rag
+  ai:
+    dashscope:
+      api-key: {api-key}
