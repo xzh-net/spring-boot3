@@ -12,7 +12,7 @@ SpringAI 帮我们规范了函数定义、注册等过程，并在发起模型�
 
 SpringAI 通过@Bean和@Description注解将执行逻辑与提示词进行注册和绑定。
 
-```json
+```bash
 curl https://api.openai.com/v1/chat/completions \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer $OPENAI_API_KEY" \
