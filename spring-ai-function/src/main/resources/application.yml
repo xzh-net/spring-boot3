@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-ai-function
+  ai:
+    dashscope:
+      api-key: {api-key}
+      chat:
+        options:
+          model: qwen-plus
