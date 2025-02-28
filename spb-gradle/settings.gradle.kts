@@ -1,4 +1,4 @@
-rootProject.name = "spb-gradle"
+rootProject.name = "gradle-demo"
 dependencyResolutionManagement{
     repositories{
         maven{

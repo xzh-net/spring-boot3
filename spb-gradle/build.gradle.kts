@@ -12,7 +12,7 @@ publishing { // 配置发布插件
     publications { // 定义发布物
         create<MavenPublication>("library") { // 创建一个名为"library"的Maven发布物
             groupId = "net.xzh" // 设置发布物的groupId
-            artifactId = "spb-gradle" // 设置发布物的artifactId
+            artifactId = "gradle-demo" // 设置发布物的artifactId
             version = "0.0.1-SNAPSHOT" // 设置发布物的版本
             from(components["java"]) // 从java组件（通常是Java库）中获取发布内容
         }
