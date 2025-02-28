@@ -56,5 +56,5 @@ curl https://api.openai.com/v1/chat/completions \
 
 - 乘法运算
 	- http://localhost:8080/ai/chat?userMessage=2乘3
-- 触发运算
+- 除法运算
 	- http://localhost:8080/ai/chat?userMessage=2除3
