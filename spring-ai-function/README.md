@@ -8,6 +8,8 @@
 
 SpringAI 帮我们规范了函数定义、注册等过程，并在发起模型请求之前自动将函数注入到 Prompt 中，而当模型决策在合适的时候去调用某个函数时，Spring AI 完成函数调用动作，最终将函数执行结果与原始问题再一并发送给模型，模型根据新的输入决策下一步动作。这其中涉及与大模型的多次交互过程，一次函数调用就是一次完成的交互过程。
 
+![](download.png)
+
 以下是原生openai调用一次请求传递的参数，可以看到通过`tools`参数传递的了`function`，定义了一个`get_current_weather`方法，parameters里面有两个参数，string类型的location变量代表城市，string类型的unit代表气温类型，取值来自枚举范围。
 
 SpringAI 通过@Bean和@Description注解将执行逻辑与提示词进行注册和绑定。
