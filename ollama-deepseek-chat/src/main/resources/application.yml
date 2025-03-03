@@ -1,0 +1,12 @@
+server:
+  port: 10005
+
+spring:
+  application:
+    name: ollama-deepseek-chat
+
+  ai:
+    ollama:
+      base-url: http://172.17.18.4:11434
+      chat:
+        model: deepseek-r1:8b
