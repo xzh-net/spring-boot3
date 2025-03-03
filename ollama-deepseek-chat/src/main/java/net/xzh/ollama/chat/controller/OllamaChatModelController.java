@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ollama/chat-model")
 public class OllamaChatModelController {
 
-    private static final String DEFAULT_PROMPT = "你好，介绍下你自己吧。请用中文回答。";
+    private static final String DEFAULT_PROMPT = "请给我讲一个笑话。";
 
     private final ChatModel ollamaChatModel;
 
