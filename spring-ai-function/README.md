@@ -25,7 +25,7 @@ curl https://api.openai.com/v1/chat/completions \
   "messages": [
     {
       "role": "user",
-      "content": "What'\''s the weather like in Boston today?"
+      "content": "大连天气怎么样？"
     }
   ],
   "tools": [
@@ -70,7 +70,7 @@ LLM根据提问内容和所有function的描述信息进行匹配，识别什么
 					"arguments": "{\"location\": \"Boston, MA\", \"unit\": \"fahrenheit\"}"
 				},
 				"index": 0,
-				"id": "call_179df50e4367403cb850eb",
+				"id": "call_bSRms7bCa3ZDpSlMIs1Hzfc8",
 				"type": "function"
 			}]
 		},
@@ -93,6 +93,93 @@ LLM根据提问内容和所有function的描述信息进行匹配，识别什么
 	"id": "chatcmpl-3c1c0961-f38b-9b58-a899-61c532fd91b5"
 }
 ```
+
+客户端根据`tool_calls`去调用函数，将请求结果封装到历史会话请求体中再次调用AI
+```bash
+
+curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer $OPENAI_API_KEY" \
+-d '{
+  "model": "qwen-plus",
+  "messages": [
+    {
+      "role": "user",
+      "content": "大连天气怎么样？"
+    },
+	{
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "id": "call_bSRms7bCa3ZDpSlMIs1Hzfc8",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"location\": \"大连\", \"unit\": \"C\"}"
+          }
+        }
+      ]
+    },
+	{
+      "content": "{\"temp\":99.99,\"unit\":\"C\"}",
+      "role": "tool",
+      "name": "get_current_weather",
+      "tool_call_id": "call_bSRms7bCa3ZDpSlMIs1Hzfc8"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_current_weather",
+        "description": "Get the current weather in a given location",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string",
+              "description": "The city and state, e.g. San Francisco, CA"
+            },
+            "unit": {
+              "type": "string",
+              "enum": ["celsius", "fahrenheit"]
+            }
+          },
+          "required": ["location"]
+        }
+      }
+    }
+  ],
+  "tool_choice": "auto"
+}'
+
+```
+
+对比第一次请求体，本次`messages`多出了以下内容，分别是：调用`tool_calls`中哪个方法，参数是什么？返回结果是什么
+
+```bash
+{
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "id": "call_bSRms7bCa3ZDpSlMIs1Hzfc8",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"location\": \"大连\", \"unit\": \"C\"}"
+          }
+        }
+      ]
+    },
+	{
+      "content": "{\"temp\":99.99,\"unit\":\"C\"}",
+      "role": "tool",
+      "name": "get_current_weather",
+      "tool_call_id": "call_bSRms7bCa3ZDpSlMIs1Hzfc8"
+    }
+```
+
+至此一次完整的 Function 调用过程就结束了，意味着可以一本正经的胡说八道了。当然AI会对问题的结果进行纠正和提示。
 
 ## 测试
 
