@@ -155,7 +155,7 @@ curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions 
 
 ```
 
-对比第一次请求体，本次`messages`多出了以下内容，分别是：调用`tool_calls`中哪个方法，参数是什么？返回结果是什么
+对比第一次请求体，本次`messages`多出了以下内容，分别是：调用`tool_calls`中哪个方法，参数是什么，返回结果是什么
 
 ```bash
 {
