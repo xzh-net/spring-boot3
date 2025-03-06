@@ -11,4 +11,5 @@
 - [集成Milvus和Embedding服务，实现向量化检索（阿里云百炼）](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-milvusl)
 - [基于AI的大模型和检索增强生成技术，搭建本地知识库（阿里云百炼）](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-rag)
 - [开发AI智能体调用DeepSeek本地模型](https://github.com/xzh-net/spring-boot3/tree/main/ollama-deepseek-chat)
+- [什么是AI结构化输出](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-structured)
 
