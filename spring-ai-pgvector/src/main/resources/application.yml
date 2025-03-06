@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-ai-pgvector
+
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/postgres
+    username: root
+    password: 123456
+
+  ai:
+    dashscope:
+      api-key:  {api-key}
+      # workspace-id: ${AI_DASHSCOPE_WORKSPACE_ID}
+
+    vectorstore:
+      pgvector:
+        dimensions: 1536
+        index-type: hnsw
+        distance-type: cosine_distance
