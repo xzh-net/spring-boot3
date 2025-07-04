@@ -2,11 +2,11 @@
 
 ## 1. 基础功能
 
-- [为什么 SpringBoot3 应该抛弃 Maven，搭配 Gradle 来使用？](https://github.com/xzh-net/spring-boot3/tree/main/gradle-demo)
+- [为什么 Spring Boot 3应该抛弃 Maven，搭配 Gradle 来使用？](https://github.com/xzh-net/spring-boot3/tree/main/gradle-demo)
 
 ## 2. OpenAI
 
-- [milvus-sdk-java整合SpringBoot基于Embedding服务（阿里云百炼）实现向量化检索](https://github.com/xzh-net/spring-boot3/tree/main/milvus-embeddind)
+- [milvus-sdk-java整合Spring Boot基于Embedding服务（阿里云百炼）实现向量化检索](https://github.com/xzh-net/spring-boot3/tree/main/milvus-embeddind)
 - [基于AI的大模型和检索增强生成技术，搭建本地知识库（阿里云百炼）](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-rag)
 - [用PostgreSQL实现向量数据持久化和搜索](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-pgvector)
 
