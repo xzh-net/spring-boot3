@@ -6,13 +6,9 @@
 
 ## 2. OpenAI
 
-- [部署 ollama3 并安装模型](https://github.com/xzh-net/spring-boot3/tree/main/ollama-chat)
-- [Spring AI如何调用Function（阿里云百炼）](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-function)
-- [集成Milvus和Embedding服务，实现向量化检索（阿里云百炼）](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-milvusl)
+- [milvus-sdk-java整合SpringBoot基于Embedding服务（阿里云百炼）实现向量化检索](https://github.com/xzh-net/spring-boot3/tree/main/milvus-embeddind)
 - [基于AI的大模型和检索增强生成技术，搭建本地知识库（阿里云百炼）](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-rag)
 - [用PostgreSQL实现向量数据持久化和搜索](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-pgvector)
-- [开发AI智能体调用DeepSeek本地模型](https://github.com/xzh-net/spring-boot3/tree/main/ollama-deepseek-chat)
-- [什么是AI结构化输出](https://github.com/xzh-net/spring-boot3/tree/main/spring-ai-structured)
 
 ## 3. Spring AI 已集成的功能模型
 
