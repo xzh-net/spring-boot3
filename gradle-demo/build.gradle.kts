@@ -25,8 +25,8 @@ version = "0.0.1-SNAPSHOT"
 
 // Java配置块
 java {
-    // 设置Java源代码的兼容性版本为21，即Java 21
-    sourceCompatibility = JavaVersion.VERSION_21
+    // 设置Java源代码的兼容性版本为17，即Java 17
+    sourceCompatibility = JavaVersion.VERSION_17
 }
 
 //让 compileOnly 配置继承 annotationProcessor 配置中的所有依赖，
