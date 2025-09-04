@@ -2,7 +2,7 @@ server:
   port: 8080
 
 milvus:
-  token: root:Milvus
+  token: root:milvus
   uri: http://172.17.17.161:19530
   pool:
     maxIdle: 10
@@ -10,7 +10,7 @@ milvus:
 
 spring:
   application:
-    name: spring-ai-milvus
+    name: milvus-embeddind
   ai:
     dashscope:
       api-key: sk-4b3b6ba069614448b338fa4864938f8c
