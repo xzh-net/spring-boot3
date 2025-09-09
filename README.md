@@ -4,7 +4,11 @@
 
 - [为什么 Spring Boot 3应该抛弃 Maven，搭配 Gradle 来使用？](https://github.com/xzh-net/spring-boot3/tree/main/gradle-demo)
 
-## 2. AI
+## 2. OpenAI
+
+- [OpenAI聊天模型交互的两种方式](https://github.com/xzh-net/spring-boot3/tree/main/openai-chat)
+
+- [Springboot集成Milvus和Embedding服务，实现向量化检索](https://github.com/xzh-net/spring-boot3/tree/main/milvus-embeddind)
 
 - [Springboot集成Milvus和Embedding服务，实现向量化检索](https://github.com/xzh-net/spring-boot3/tree/main/milvus-embeddind)
 
