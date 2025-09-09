@@ -8,7 +8,7 @@
 
 - [OpenAI聊天模型交互的两种方式](https://github.com/xzh-net/spring-boot3/tree/main/openai-chat)
 
-- [Springboot集成Milvus和Embedding服务，实现向量化检索](https://github.com/xzh-net/spring-boot3/tree/main/milvus-embeddind)
+- [OpenAI调用本地向量模型](https://github.com/xzh-net/spring-boot3/tree/main/openai-embeeding)
 
 - [Springboot集成Milvus和Embedding服务，实现向量化检索](https://github.com/xzh-net/spring-boot3/tree/main/milvus-embeddind)
 
