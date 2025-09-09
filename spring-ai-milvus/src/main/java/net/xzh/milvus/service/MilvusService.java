@@ -26,7 +26,7 @@ import io.milvus.v2.service.vector.request.SearchReq;
 import io.milvus.v2.service.vector.request.data.FloatVec;
 import io.milvus.v2.service.vector.response.GetResp;
 import io.milvus.v2.service.vector.response.SearchResp;
-import net.xzh.milvus.model.TestRecord;
+import net.xzh.milvus.model.Product;
 
 @Component
 public class MilvusService {
@@ -80,11 +80,12 @@ public class MilvusService {
                     .build());
 
             schema.addField(AddFieldReq.builder()
-                    .fieldName("title_vector")
+                    .fieldName("embedding")
                     .dataType(DataType.FloatVector)
                     .dimension(VECTOR_DIM)
                     .build());
 
+            //索引方式，
             IndexParam indexParam = IndexParam.builder()
                     .fieldName("title_vector")
                     .metricType(IndexParam.MetricType.COSINE)
@@ -104,10 +105,10 @@ public class MilvusService {
     /**
      * 批量插入记录（优化性能）
      */
-    public void batchInsertRecords(List<TestRecord> records) {
+    public void batchInsertProducts(List<Product> products) {
         // 预先生成所有向量（避免在连接执行块中操作）
-        List<JsonObject> dataList = records.stream().map(record -> {
-            float[] floatArray = embeddingModel.embed(record.getTitle());
+        List<JsonObject> dataList = products.stream().map(product -> {
+            float[] floatArray = embeddingModel.embed(product.getTitle());
             
             // 优化向量转换：避免装箱操作
             List<Float> vectorList = new ArrayList<>(floatArray.length);
@@ -116,8 +117,8 @@ public class MilvusService {
             }
             
             JsonObject vector = new JsonObject();
-            vector.addProperty("id", record.getId());
-            vector.addProperty("title", record.getTitle());
+            vector.addProperty("id", product.getId());
+            vector.addProperty("title", product.getTitle());
             vector.add("title_vector", GSON.toJsonTree(vectorList)); // 使用单例GSON
             return vector;
         }).collect(Collectors.toList());
@@ -136,7 +137,7 @@ public class MilvusService {
     /**
      * 通过ID获取记录
      */
-    public GetResp getRecord(String id) {
+    public GetResp getProduct(String id) {
         return execute(client -> {
             GetReq getReq = GetReq.builder()
                     .collectionName(COLLECTION_NAME)

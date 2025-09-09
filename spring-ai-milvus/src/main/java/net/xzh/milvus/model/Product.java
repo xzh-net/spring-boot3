@@ -1,6 +1,6 @@
 package net.xzh.milvus.model;
 
-public class TestRecord {
+public class Product {
     private String id;
     private String title;
  

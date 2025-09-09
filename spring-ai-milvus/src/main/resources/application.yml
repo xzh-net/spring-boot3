@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+milvus:
+  token: root:milvus
+  uri: http://172.17.17.161:19530
+  pool:
+    maxIdle: 10
+    maxTotal: 20
+
+spring:
+  application:
+    name: milvus-embeddind
+  ai:
+    dashscope:
+      api-key: sk-4b3b6ba069614448b338fa4864938f8c
+	  
+	  spring:
+	    application:
+	      name: spring-ai-embedding-model
+	    ai:
+	      openai:
+	        api-key: 123456
+	        base-url: http://172.17.18.24:8104
+	        embedding:
+	          options:
+	            # 模型ID,需要替换为实际的接入点ID
+	            model: Qwen3-Embedding-8B
+	            # Chat接口路径,与OpenAI接口保持一致
+	            completions-path: /v1/embeddings
