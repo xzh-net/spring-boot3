@@ -35,15 +35,19 @@ public class MilvusService {
     
     //类似于mysql中的表，定义一个名称为collection_02的集合
     private static final String COLLECTION_NAME = "collection_02";
-    //向量维度定义1536，跟阿里巴巴embedding向量服务返回的维度保持一致
-    private static final int VECTOR_DIM = 1536;
+    //向量维度定义4096，跟千问embedding向量服务返回的维度保持一致（默认4096）
+    private static final int VECTOR_DIM = 4096;
     private static final String CLIENT_KEY = "default";
     private static final Gson GSON = new Gson(); // 单例Gson对象
 
     @Autowired
     private MilvusClientV2Pool clientPool;
-    @Autowired
-    private EmbeddingModel embeddingModel;
+    
+    private final EmbeddingModel embeddingModel;
+
+	public MilvusService(EmbeddingModel embeddingModel) {
+		this.embeddingModel = embeddingModel;
+	}
 
     // 连接执行模板（通用连接管理）
     public <T> T execute(MilvusOperation<T> operation) {
@@ -80,12 +84,12 @@ public class MilvusService {
                     .build());
 
             schema.addField(AddFieldReq.builder()
-                    .fieldName("embedding")
+                    .fieldName("title_vector")
                     .dataType(DataType.FloatVector)
                     .dimension(VECTOR_DIM)
                     .build());
 
-            //索引方式，
+            //在已有字段title_vector上创建余弦相似度索引
             IndexParam indexParam = IndexParam.builder()
                     .fieldName("title_vector")
                     .metricType(IndexParam.MetricType.COSINE)

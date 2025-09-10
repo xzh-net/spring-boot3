@@ -17,7 +17,7 @@ import net.xzh.milvus.service.MilvusService;
 @RestController
 @RequestMapping("/milvus")
 public class MilvusController {
-
+	
     @Autowired
     private MilvusService milvusService;
 
@@ -38,8 +38,8 @@ public class MilvusController {
         );
         milvusService.batchInsertProducts(products);
         return "5 records inserted successfully";
-    }
-
+    }  
+    
     @GetMapping("/getProduct")
     public GetResp getProduct(@RequestParam(name = "id") String id) {
         return milvusService.getProduct(id);
